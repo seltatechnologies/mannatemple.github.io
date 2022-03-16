@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            font-family: "Abeezee";
+        }
+        button{
+            border: none;
+        }
+        span{
+            vertical-align: middle;
+        }
+        span:hover{
+            cursor: pointer;
+        }
+        
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manna Temple</title>
+    <link href="css/material_icons/icons" rel="stylesheet">
+    <link href="css/material_icons/icons_outlined" rel="stylesheet">
+
+    <script src="js/jquery-3.6.0.js"></script>
+    <style>
+        .controls{
+            background: #011126;
+            position: absolute;
+            bottom: 10%;
+            padding: 2%;
+            display: flex;
+            overflow: hidden;
+            width: 60%;
+            flex-wrap: wrap;
+        }
+        .video-container{
+            width: 60vw;
+            height: 70%;
+            background: black;
+            float: left;
+        }
+        .c-video{
+            width: 100%;
+            position: relative;
+        }
+        video{
+            width: 100%;
+            height: 100%;
+        }
+        .progress-bar{
+            background: #fff;
+            box-shadow: 2px 2px 5px inset black;
+            height: 10px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin: 1% 0;
+        }
+        .progress{
+            background: #F25D27;
+            height: 10px;
+            width: 0;
+            box-shadow: 0 0 5px #F25D27;
+        }
+        #play-pause, .speaker{
+            color: #F25D27;
+            margin: 0 1%;
+            font-size: 3em;
+        }
+        #volume{
+            background: #F25D27;
+            position: relative;
+            appearance: none;
+            height: 10px;
+            border-radius: 50px;
+            transform: translateY(200%);
+        }
+        .slider{
+            vertical-align: middle;
+            position: relative;
+        }
+        .slider::-webkit-slider-thumb{
+            background: #FFC7B2;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+        }
+        .slider::-webkit-slider-thumb:hover{
+            cursor: pointer;
+        }
+        .slider::-moz-range-thumb{
+            background: pink;
+            width: 15px;
+            height: 15px;
+        }
+
+        .upcoming-programs{
+            position: fixed;
+            width: 40vw;
+            right: 0;
+            height: 100vh;
+            padding: 3%;
+            background: #011126;
+        }
+        .upcoming-programs .tv-channel{
+            color: #F25D27;
+            font-size: 4em;
+        }
+        .upcoming-shows{
+            border-top: 1px solid #fefefe;
+            background: #FFC7B2;
+            border-bottom: 1px solid #fefefe;
+            margin: 3% 0;
+            padding: 2%;
+            border-radius: 5px;
+        }
+        .upcoming-shows:hover{
+            background: #f5f5f5;
+        }
+        .upcoming-programs span, .upcoming-programs .show-details{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .show-details{
+            padding: 2%;
+        }
+        .upcoming-programs span{
+            padding: 3%;
+            font-size: 3em;
+            background: #F25D27;
+            border-radius: 5px;
+            color: #FFC7B2;
+        }
+        .upcoming-shows:hover span{
+            color: #F25D27;
+        }
+        .upcoming-programs .show-host{
+            color: #F25D27;
+        }
+        .right-controls{
+            position: absolute;
+            transform: translateY(50%);
+            width: inherit;
+            right: 0;
+            width: 15%;
+        }
+        .right-controls span{
+            display: inline;
+        }
+
+        
+
+    </style>
+    <!-- FOOTER STYLES AND FUNCTIONS -->
+    <script src="includes/footer/footer.js"></script>
+    <link rel="stylesheet" href="includes/footer/foote.css">
+</head>
+<body>
+
+    <div class="manna-tv-activity">
+            <!-- MANNA TV STREAM -->
+        <div class="video-container">
+            <div class="c-video">
+                <video class="video" src="video.mkv" width="320" height="240" autoplay>
+                </video>
+            </div>
+        </div>
+
+        <!--  -->
+        <div class="controls">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="buttons">
+                <span id="play-pause" class="material-icons">play_arrow</span>
+            </div>
+            <span class="speaker material-icons">volume_up</span>
+            <input type="range" class="slider" id="volume">
+            <div class="right-controls">
+                <span class="speaker material-icons" id="fullscreen">fullscreen</span>
+                <span class="speaker material-icons" id="share">share</span>
+            </div>
+        </div>
+
+
+        <div class="upcoming-programs">
+            <h1 class="tv-channel">MANNA TV</h1>
+            <ul class="coming-up">
+                <img src="" alt="">
+                <h1 style="color: white">Now Playing</h1>
+                <li class="upcoming-shows">
+                    <span class="material-icons">live_tv</span>
+                    <div class="show-details">
+                        <h3 class="title">Manna Testimonies</h3>
+                        <p class="show-host">Thando Hadebe</p>
+                        <h4 class="start-time">06:30</h4>
+                    </div>
+                </li>
+                <h1 style="color: white">Still To Come...</h1>
+                <li class="upcoming-shows">
+                    <span class="material-icons">live_tv</span>
+                    <div class="show-details">
+                        <h3 class="title">Morning Motivation with Isaiah Sibeko</h3>
+                        <p class="show-host">Isaiah Sibeko</p>
+                        <h4 class="start-time">07:30</h4>
+                    </div>
+                </li>
+                <li class="upcoming-shows">
+                    <span class="material-icons">live_tv</span>
+                    <div class="show-details">
+                        <h3 class="title">Worship Harmonies</h3>
+                        <p class="show-host">Karabo Montoedi</p>
+                        <h4 class="start-time">09:30</h4>
+                    </div>
+                </li>
+            </ul>
+            <p class="copyright" style="color: white">Copyright &copy 2022 - Selta Technologies</p>
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="menu-items active" id="menu-tv">
+            <span class="material-icons-outlined">live_tv</span>
+            <p class="label">Manna TV</p>
+        </div>
+        <div class="menu-items inactive" id="menu-radio">
+            <span class="material-icons-outlined">radio</span>
+            <p class="label">Manna Radio</p>
+        </div>
+        <div class="menu-items inactive" id="menu-directions">
+            <span class="material-icons-outlined">directions</span>
+            <p class="label">Directions</p>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        var video = document.querySelector("video");
+        var progress = document.querySelector(".progress")
+
+        $("#play-pause").click(function(){
+            if(video.paused){
+                $(this).text("pause")
+                video.play();
+            }else if(video.ended){
+                $(this).text("play_arrow")
+            }else{
+                $(this).text("play_arrow")
+                video.pause();
+            }
+        })
+
+        video.addEventListener("timeupdate", function(){
+            var progressPosition = video.currentTime / video.duration;
+            progress.style.width = progressPosition * 100 + "%";
+        })
+
+        let volumeControl = $("#volume").val();
+            video.volume = volumeControl / 100;
+        $("#volume").change(function(){
+            let volume = $(this).val();
+            video.volume = volume / 100;
+        });
+
+        $("#fullscreen").click(function(){
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) { /* Safari */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE11 */
+                video.msRequestFullscreen();
+            }
+        })
+
+        video.addEventListener("dblclick", function(){
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) { /* Safari */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE11 */
+                video.msRequestFullscreen();
+            }
+        })
+
+    })
+
+</script>
+</html>

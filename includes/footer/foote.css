@@ -1,0 +1,24 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background: #F25D27;
+    padding: 1%;
+}
+.footer .menu-items{
+    width: calc(100% / 3);
+    float: left;
+    text-align: center;
+}
+.footer .menu-items:hover{
+    cursor: pointer;
+}
+.active{
+    color: #011126;
+}
+.inactive{
+    color: #FFC7B2;
+}
+.footer .menu-items .label{
+    font-size: 1em;
+}

@@ -1,0 +1,24 @@
+$(document).ready(function(){
+    $("#menu-tv").click(function(){
+        $(".menu-items").addClass("inactive").removeClass("active");
+        $(this).addClass("active").removeClass("inactive");
+        $(".manna-tv-activity").show();
+        $(".manna-radio-activity").hide();
+        $(".directions-activity").hide();
+
+    })
+    $("#menu-radio").click(function(){
+        $(".menu-items").addClass("inactive").removeClass("active");
+        $(this).addClass("active").removeClass("inactive");
+        $(".manna-tv-activity").hide();
+        $(".manna-radio-activity").show();
+        $(".directions-activity").hide();
+    })
+    $("#menu-directions").click(function(){
+        $(".menu-items").addClass("inactive").removeClass("active");
+        $(this).addClass("active").removeClass("inactive");
+        $(".manna-tv-activity").hide();
+        $(".manna-radio-activity").hide();
+        $(".directions-activity").show();
+    })
+})
